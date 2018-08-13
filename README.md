@@ -1,7 +1,7 @@
 <snippet>
 <content>
 # Simple Chat
-Belajar Konsep Buat Aplikasi Chating
+Belajar Konsep Buat Aplikasi Chatting
 
 ## Cara pakai
 1. Clone git ini
