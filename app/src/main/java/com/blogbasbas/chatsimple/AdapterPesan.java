@@ -19,8 +19,7 @@ import java.util.List;
 
 public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder> {
     private static final String User = "1";
-
-
+    // list
     List<MessageItem> itemList;
     Context context;
 
