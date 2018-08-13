@@ -16,12 +16,13 @@ Belajar Konsep Buat Aplikasi Chatting
 2. Buat branch baru dan tambahkan beberap fitur
 3. Commit dan push sesuai dengan branch yang telah dibuat
 ## Need More Contribute
-1. Tempelate Chat
+1. Template Chat
 2. Real time chat 
 3. Notification 
 4. Counter pesan jika belum di baca
 5. grup chat
 6. penambahan fitur backend
+
 
 
 
