@@ -3,6 +3,10 @@
 # Simple Chat
 Belajar Konsep Buat Aplikasi Chatting
 
+
+## Preview
+<img src="https://github.com/basriumar12/ChatSimple_RestApiPhpNative/blob/master/img/img1.png" width="256"/>&nbsp;
+
 ## Cara pakai
 1. Clone git ini
 2. Buka di android studio
