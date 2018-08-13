@@ -18,8 +18,6 @@ import java.util.List;
  */
 
 public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder> {
-    private static final int RIGHT_MSG = 0;
-    private static final int LEFT_MSG = 1;
     private static final String User = "1";
 
 

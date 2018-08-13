@@ -16,15 +16,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="umar :"
+            android:text=""
             android:textSize="17sp" />
 
         <TextView
             android:id="@+id/tv_body_left"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@android:color/white"
             android:text=" t"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,15 +42,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:background="@color/colorPrimary"
-                android:text="Bas :"
+                android:text=""
                 android:textSize="17sp" />
 
             <TextView
+
                 android:id="@+id/tv_body_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:layout_gravity="right"
                 android:text=" t"
+                android:background="#2fba1c"
+                android:layout_marginLeft="30dp"
                 android:textSize="17sp" />
 
 

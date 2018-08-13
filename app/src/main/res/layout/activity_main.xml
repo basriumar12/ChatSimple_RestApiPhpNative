@@ -4,6 +4,7 @@
     android:id="@+id/constrain_main"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+ android:background="@drawable/wa"
     android:layout_height="match_parent"
     tools:context="com.blogbasbas.chatsimple.MainActivity">
 <com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayout
