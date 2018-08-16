@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Gagal Kirim Data", Toast.LENGTH_SHORT).show();
                     }
                 }
-
+//
                 @Override
                 public void onFailure(Call<ResponseInsert> call, Throwable t) {
                     Log.e("Tag", "Error jaringan saat insert :" + t.getMessage());
