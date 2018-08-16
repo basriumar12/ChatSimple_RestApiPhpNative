@@ -6,6 +6,10 @@ Belajar Konsep Buat Aplikasi Chatting
 
 ## Preview
 <img src="https://github.com/basriumar12/ChatSimple_RestApiPhpNative/blob/master/img/img1.png" width="256"/>&nbsp;
+## Testing Postman
+<img src="https://github.com/basriumar12/ChatSimple_RestApiPhpNative/blob/master/img/test_postman.png" width="400"/>&nbsp;
+## Design Database
+<img src="https://github.com/basriumar12/ChatSimple_RestApiPhpNative/blob/master/img/database.png" width="300"/>&nbsp;
 
 ## Cara pakai
 1. Clone git ini
