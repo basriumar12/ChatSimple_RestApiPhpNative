@@ -17,8 +17,9 @@ import com.blogbasbas.chatsimple.model.ResponsePesan;
 import com.blogbasbas.chatsimple.network.ApiService;
 import com.blogbasbas.chatsimple.network.IniRetrofit;
 import com.google.gson.Gson;
-import com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayout;
-import com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_send)
     Button btnSend;
     @BindView(R.id.swipe_main)
-    SwipyRefreshLayout swipeMain;
+    RefreshLayout swipeMain;
 
 
     @Override
@@ -51,18 +52,32 @@ public class MainActivity extends AppCompatActivity {
         layoutManager.setStackFromEnd(true);
         rvPesan.setLayoutManager(layoutManager);
         getPesan();
-        swipeMain.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() {
+       /* swipeMain.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh(SwipyRefreshLayoutDirection direction) {
                 getPesan();
             }
         });
-
+*/
+       swipeMain.setOnRefreshListener(new OnRefreshListener() {
+           @Override
+           public void onRefresh(RefreshLayout refreshlayout) {
+               getPesan();
+               refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+           }
+       });
+        swipeMain.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshlayout) {
+                getPesan();
+                refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
+            }
+        });
     }
 
     private void getPesan() {
         ApiService apiService = IniRetrofit.getInstance();
-        Call<ResponsePesan> call = apiService.tampilPesan("1", "2", "2", "1");
+        Call<ResponsePesan> call = apiService.tampilPesan("2", "1", "1", "2");
         call.enqueue(new Callback<ResponsePesan>() {
             @Override
             public void onResponse(Call<ResponsePesan> call, Response<ResponsePesan> response) {
@@ -70,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Tag", "Hasil List :" + new Gson().toJson(hasilPesan));
                 if (response.body().isStatus() == true) {
                     AdapterPesan adapterPesan = new AdapterPesan(hasilPesan, MainActivity.this);
-                   swipeMain.setRefreshing(false);
+                 //  swipeMain.setRefreshing(false);
                     rvPesan.setAdapter(adapterPesan);
 
 
@@ -99,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.show();
 
             ApiService apiService = IniRetrofit.getInstance();
-            Call<ResponseInsert> call = apiService.insertPesan(pesan, "1", "2", "1");
+            Call<ResponseInsert> call = apiService.insertPesan(pesan, "2", "1", "1");
             call.enqueue(new Callback<ResponseInsert>() {
                 @Override
                 public void onResponse(Call<ResponseInsert> call, Response<ResponseInsert> response) {

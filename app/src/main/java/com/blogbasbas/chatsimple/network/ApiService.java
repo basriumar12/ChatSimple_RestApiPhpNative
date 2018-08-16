@@ -15,10 +15,10 @@ import retrofit2.http.POST;
 public interface ApiService {
     @FormUrlEncoded
     @POST("tampil_pesan.php")
-    Call<ResponsePesan> tampilPesan(@Field("message_sender") String sender,
-                                    @Field("message_to") String to,
-                                    @Field("message_sender1") String sender1,
-                                    @Field("message_to1") String to1);
+    Call<ResponsePesan> tampilPesan(@Field("message_sender") String pengirim,
+                                    @Field("message_to") String penerima,
+                                    @Field("message_sender1") String penerima1,
+                                    @Field("message_to1") String pengirim1);
     @FormUrlEncoded
     @POST("insert.php")
     Call<ResponseInsert> insertPesan(@Field("message_body") String body,
