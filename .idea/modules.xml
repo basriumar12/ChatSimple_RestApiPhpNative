@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChatSimple_RestApiPhpNative.iml" filepath="$PROJECT_DIR$/ChatSimple_RestApiPhpNative.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/chatsimple.iml" filepath="$PROJECT_DIR$/chatsimple.iml" />
     </modules>
   </component>
 </project>
