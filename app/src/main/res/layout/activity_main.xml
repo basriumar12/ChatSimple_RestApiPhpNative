@@ -8,6 +8,7 @@
     android:background="@drawable/wa"
     tools:context="com.blogbasbas.chatsimple.MainActivity">
 
+
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/swipe_main"
         android:layout_width="match_parent"
