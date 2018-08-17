@@ -71,7 +71,7 @@ public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder
         }
 
         void setContent(MessageItem item){
-
+//
             if (User.equals(item.getMessageSender())){
                 receiver.setVisibility(View.GONE);
                 tvReceiverUsername.setVisibility(View.GONE);
