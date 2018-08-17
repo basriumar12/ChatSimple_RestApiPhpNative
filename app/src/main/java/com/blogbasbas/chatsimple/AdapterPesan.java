@@ -2,6 +2,7 @@ package com.blogbasbas.chatsimple;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,9 @@ import com.blogbasbas.chatsimple.model.MessageItem;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by User on 10/08/2018.
  */
@@ -20,36 +24,21 @@ import java.util.List;
 public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder> {
     private static final String User = "2";
     // list
-    List<MessageItem> itemList;
-    Context context;
+    private List<MessageItem> itemList;
 
-    public AdapterPesan(List<MessageItem> itemList, Context context) {
+    AdapterPesan(List<MessageItem> itemList) {
         this.itemList = itemList;
-        this.context = context;
     }
 
     @Override
     public AdapterPesan.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pesan,parent,false);
-            return new MyViewHolder(view);
-
-
-
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pesan, parent, false);
+        return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdapterPesan.MyViewHolder holder, int position) {
-
-       if (User.equals(itemList.get(position).getMessageSender())){
-           holder.pesan1.setVisibility(View.GONE);
-           holder.tvNama1.setVisibility(View.GONE);
-           holder.pesan2.setText(itemList.get(position).getMessageBody());
-       } else if (!User.equals(itemList.get(position).getMessageSender())){
-           holder.pesan1.setText(itemList.get(position).getMessageBody());
-           holder.pesan2.setVisibility(View.GONE);
-           holder.tvNama2.setVisibility(View.GONE);
-       }
-
+        holder.setContent(itemList.get(position));
     }
 
     @Override
@@ -57,14 +46,41 @@ public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder
         return itemList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView pesan1,pesan2,tvNama1,tvNama2;
-        public MyViewHolder(View itemView) {
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.itemSender)
+        CardView sender;
+
+        @BindView(R.id.itemReceiver)
+        CardView receiver;
+
+        @BindView(R.id.tvSenderUsername)
+        TextView tvSenderUsername;
+
+        @BindView(R.id.tvSenderMessage)
+        TextView tvSenderMessage;
+
+        @BindView(R.id.tvReceiverUsername)
+        TextView tvReceiverUsername;
+
+        @BindView(R.id.tvReceiverMessage)
+        TextView tvReceiverMessage;
+
+        MyViewHolder(View itemView) {
             super(itemView);
-            pesan1 = (TextView) itemView.findViewById(R.id.tv_body_left);
-            pesan2 = (TextView) itemView.findViewById(R.id.tv_body_right);
-            tvNama1 =(TextView) itemView.findViewById(R.id.tv_nama1);
-            tvNama2 =(TextView) itemView.findViewById(R.id.tv_nama2);
+            ButterKnife.bind(this, itemView);
+        }
+
+        void setContent(MessageItem item){
+
+            if (User.equals(item.getMessageSender())){
+                receiver.setVisibility(View.GONE);
+                tvSenderMessage.setText(item.getMessageBody());
+                tvSenderUsername.setText("Username");
+            } else {
+                sender.setVisibility(View.GONE);
+                tvReceiverMessage.setVisibility(View.GONE);
+                tvReceiverUsername.setText("Username");
+            }
         }
     }
 }

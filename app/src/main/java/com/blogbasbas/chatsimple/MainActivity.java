@@ -59,13 +59,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
-       swipeMain.setOnRefreshListener(new OnRefreshListener() {
-           @Override
-           public void onRefresh(RefreshLayout refreshlayout) {
-               getPesan();
-               refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
-           }
-       });
+        swipeMain.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                getPesan();
+                refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+            }
+        });
         swipeMain.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshlayout) {
@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 List<MessageItem> hasilPesan = response.body().getMessage();
                 Log.e("Tag", "Hasil List :" + new Gson().toJson(hasilPesan));
                 if (response.body().isStatus() == true) {
-                    AdapterPesan adapterPesan = new AdapterPesan(hasilPesan, MainActivity.this);
-                 //  swipeMain.setRefreshing(false);
+                    AdapterPesan adapterPesan = new AdapterPesan(hasilPesan);
+                    //  swipeMain.setRefreshing(false);
                     rvPesan.setAdapter(adapterPesan);
 
 
@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Gagal Kirim Data", Toast.LENGTH_SHORT).show();
                     }
                 }
-//
+
+                //
                 @Override
                 public void onFailure(Call<ResponseInsert> call, Throwable t) {
                     Log.e("Tag", "Error jaringan saat insert :" + t.getMessage());
