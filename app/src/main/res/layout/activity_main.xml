@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context="com.blogbasbas.chatsimple.MainActivity">
 <com.scwang.smartrefresh.layout.SmartRefreshLayout
-    android:layout_gravity="bottom"
     android:id="@+id/swipe_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
