@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getPesan() {
         ApiService apiService = IniRetrofit.getInstance();
-        Call<ResponsePesan> call = apiService.tampilPesan("2", "1", "1", "2");
+        Call<ResponsePesan> call = apiService.tampilPesan("1", "2", "2", "1");
         call.enqueue(new Callback<ResponsePesan>() {
             @Override
             public void onResponse(Call<ResponsePesan> call, Response<ResponsePesan> response) {
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.show();
 
             ApiService apiService = IniRetrofit.getInstance();
-            Call<ResponseInsert> call = apiService.insertPesan(pesan, "2", "1", "1");
+            Call<ResponseInsert> call = apiService.insertPesan(pesan, "1", "2", "1");
             call.enqueue(new Callback<ResponseInsert>() {
                 @Override
                 public void onResponse(Call<ResponseInsert> call, Response<ResponseInsert> response) {

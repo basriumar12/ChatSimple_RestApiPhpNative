@@ -22,9 +22,11 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_pesan"
+
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_above="@id/form_message"
+                android:layout_marginBottom="20dp"
                 tools:listitem="@layout/item_pesan" />
 
             <LinearLayout

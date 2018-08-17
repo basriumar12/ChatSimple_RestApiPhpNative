@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
  */
 
 public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder> {
-    private static final String User = "2";
+    private static final String User = "1";
     // list
     private List<MessageItem> itemList;
 
@@ -74,10 +74,14 @@ public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.MyViewHolder
 
             if (User.equals(item.getMessageSender())){
                 receiver.setVisibility(View.GONE);
+                tvReceiverUsername.setVisibility(View.GONE);
+
                 tvSenderMessage.setText(item.getMessageBody());
                 tvSenderUsername.setText("Username");
             } else {
                 sender.setVisibility(View.GONE);
+                tvSenderUsername.setVisibility(View.GONE);
+
                 tvReceiverMessage.setVisibility(View.GONE);
                 tvReceiverUsername.setText("Username");
             }
