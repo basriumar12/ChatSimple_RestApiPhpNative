@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
+        android:id="@+id/itemSender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-
-        >
-
-        <TextView
-            android:id="@+id/tv_nama1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:text=""
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/tv_body_left"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginRight="40dp"
-            android:background="@android:color/white"
-            android:text=" t"
-            android:textSize="17sp"
-
-            android:textStyle="bold" />
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,27 +22,62 @@
             android:orientation="vertical">
 
             <TextView
-
-                android:id="@+id/tv_nama2"
+                android:id="@+id/tvSenderUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="@color/colorPrimary"
-                android:text=""
-                android:textSize="17sp" />
+                tools:text="Username"
+                android:textSize="12sp"/>
 
             <TextView
-
-                android:id="@+id/tv_body_right"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="right"
-                android:text=" t"
-                android:background="#2fba1c"
-                android:layout_marginLeft="30dp"
-                android:textSize="17sp" />
-
+                android:id="@+id/tvSenderMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Message"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"/>
 
         </LinearLayout>
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/itemReceiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#2fba1c"
+        app:contentPadding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/tvReceiverUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Username"
+                android:textSize="12sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tvReceiverMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Username"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
