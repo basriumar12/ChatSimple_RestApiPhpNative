@@ -32,8 +32,6 @@ Belajar Konsep Buat Aplikasi Chatting
 6. penambahan fitur backend
 
 
-
-
 ## Credits
 Basri Umar
 </content>
